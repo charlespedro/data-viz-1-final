@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Poverty in East Asia</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+    <style type="text/css">
+	#container {
+    height: 600px; 
+    min-width: 310px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+	border: 7px solid #A2BDD4;
+	border-radius: 10px;
+	}
+	.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+	}
+    body {
+        background-color: #F4E3C1;
+    }	
+    p {
+        text-align: left;
+        margin: 25px;
+        font-size: 15px;
+		font-family: Lucida Sans Unicode;
+    }	
+	</style>
+
+<body>
+
+<div id="container" style="height: 700px;"></div>
+	
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/mapdata/custom/asia.js"></script>
+  <script src="http://code.highcharts.com/themes/dark-unica.js"></script>
+
+
+  <script type="text/javascript">
+
+$(function () {
+
+    // Prepare demo data
+    var data = [
+
+        {
+            "hc-key": "ph",
+            "value": 25.2
+        },
+        {
+            "hc-key": "th",
+            "value": 12.6
+        },
+        {
+            "hc-key": "kr",
+            "value": 16.5
+        },
+        {
+            "hc-key": "kp",
+            "value": 0
+        },
+        {
+            "hc-key": "cn",
+            "value": 8.5
+        },
+        {
+            "hc-key": "jp",
+            "value": 0
+        },
+        {
+            "hc-key": "mm",
+            "value": 25.6
+        },
+        {
+            "hc-key": "id",
+            "value": 11.3
+        },
+        {
+            "hc-key": "sg",
+            "value": 0
+        },
+        {
+            "hc-key": "my",
+            "value": 1.7
+        },
+        {
+            "hc-key": "vn",
+            "value": 9.8
+        },
+        {
+            "hc-key": "kh",
+            "value": 18.9
+        },
+        {
+            "hc-key": "la",
+            "value": 23.2
+        },
+        {
+            "hc-key": "bn",
+            "value": 0
+        },
+        {
+            "hc-key": "tw",
+            "value": 1.6
+        },
+    ];
+
+    // Initiate the chart
+    $('#container').highcharts('Map', {
+
+        title : {
+            text : 'Percent of Population below National Poverty Lines',
+			style : {fontSize: '30px'}
+        },
+
+        subtitle : {
+            text : 'Source: <a href="http://www.adb.org/data/main">Asian Development Bank</a>'
+        },
+
+        mapNavigation: {
+            enabled: true,
+            buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+
+
+        colorAxis: {
+            min: 0
+        },
+        credits: {
+            enabled: false
+        },
+        series : [{
+            data : data,
+            mapData: Highcharts.maps['custom/asia'],
+            joinBy: 'hc-key',
+			allAreas: false,
+            name: 'Poverty Rate (%)',
+            states: {
+                hover: {
+                    color: '#FF8A6E'
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}'
+            }
+        }]
+    });
+});
+
+  </script>
+  
+  <p><br>This map shows the percentage of the population below the national poverty line in 2013. It is determined by each country's authorities based on population-weighted estimates from household surveys.<br>
+  <br>
+  Values were defaulted to 0 for Japan, Singapore, and Brunei because data were not available. They are known to have low poverty. Data for North Korea were not available either, although it is considered to be quite high. 
+  </p>
+  
+</body>
+</html>

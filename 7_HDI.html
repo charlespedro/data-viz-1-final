@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Human Development Index</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+    <style type="text/css">
+    body {
+        background-color: #F4E3C1;
+    }	
+    p {
+        text-align: left;
+        margin: 25px;
+        font-size: 16px;
+		font-family: Lucida Sans Unicode;
+    }
+	</style>
+<body>
+
+<br>
+<br>
+  <div id="container" style="height: 400px;"></div>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script type="text/javascript">
+  
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'bar',
+			backgroundColor: '#FFF9E9',
+			borderWidth: 3			
+        },
+        title: {
+            text: 'UN Human Development Index',
+			style: {
+				fontSize: "40px"
+				}
+        },
+        subtitle: {
+			text: 'Source: <a href="http://hdr.undp.org/en/data">UN Human Development Reports</a>'
+        },
+        xAxis: {
+            categories: ['Cambodia', 'Myanmar', 'Lao', 'Viet Nam', 'Indonesia', 'Thailand', 'Singapore'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Human Development Index',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -85,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Year 2000',
+            data: [.419, .425, .462, .575, .606, .648, .819]
+        }, {
+            name: 'Year 2014',
+            data: [.555, .536, .575, .666, .684, .726, .912]
+        }]		
+    });
+});
+	
+
+	
+  </script>
+  	<p>The United Nations Development Program (UNDP) uses the Human Development Index (HDI) as a crude measurement of a country's
+	development. The scale is from 0 to 1, with 1 being the highest. It is simply the geometric mean of 3 indices: a country's life expectancy, overall years spent in education,
+	and Gross National Income (GNI). <br>
+	<br>
+	</p>
+</body>
+</html>
