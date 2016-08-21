@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Final Project</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    
+  <link rel="stylesheet" href="style.css">    
+
+</head>
+<body>
+<div class='header section'>
+  <div class='container'>
+    <h1>Data Visualization Final Project</h1>
+    <p>This was submitted as the final project of a Data Visualization class at Johns Hopkinsin Spring 2016.</p>
+      
+  </div>
+</div>
+   
+    
+<div class='main section'>
+  <div class='container'>      
+    <div class="row">
+
+          <div id='pdf'>    
+          <embed width="1000" height="700" src="1-main.pdf" type="application/pdf"/>
+          </div>
+    
+          <div id='pdf'>    
+          <embed width="1000" height="900" src="2-population.pdf" type="application/pdf"/>
+          </div>
+
+          <div id='pdf'>    
+          <embed width="1000" height="800" src="3-indicators.pdf" type="application/pdf"/>
+          </div>        
+        
+          <div id='pdf'>    
+          <embed width="1000" height="900" src="4-aidflows.pdf" type="application/pdf"/>
+          </div>
+    
+          <div id='pdf'>    
+          <embed width="1000" height="800" src="5-transport.pdf" type="application/pdf"/>
+          </div>
+
+          <div id='pdf'>    
+          <embed width="1000" height="800" src="6-wealth.pdf" type="application/pdf"/>
+          </div>          
+
+          <div id='pdf'>    
+          <embed width="1000" height="900" src="7-trade.pdf" type="application/pdf"/>
+          </div>                  
+        
+    </div>       
+
+<!--HDI bar charts-->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+      
+      <div id="8-HDI" style='margin-top: 70px'></div>
+      <script type="text/javascript" src='8-HDI.js'></script>
+
+
+
+        <p>The United Nations Development Program (UNDP) uses the Human Development Index (HDI) as a crude measurement of a country's
+        development. The scale is from 0 to 1, with 1 being the highest. It is simply the geometric mean of 3 indices: a country's life expectancy, overall years spent in education,
+        and Gross National Income (GNI). <br>
+        <br>
+        </p>    
+      
+      
+    
+<!--poverty map    
+      
+      
+      <div id="9-poverty-map" style='margin-top: 70px'>
+        <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/mapdata/custom/asia.js"></script>
+  <script src="http://code.highcharts.com/themes/dark-unica.js"></script>  
+      <script type="text/javascript" src='9-poverty-map.js'></script>      
+      </div>
+      
+      
+  <p><br>This map shows the percentage of the population below the national poverty line in 2013. It is determined by each country's authorities based on population-weighted estimates from household surveys.<br>
+  <br>
+  Values were defaulted to 0 for Japan, Singapore, and Brunei because data were not available. They are known to have low poverty. Data for North Korea were not available either, although it is considered to be quite high. 
+  </p> 
+-->
+      
+      
+<!--4 step charts      -->
+      <br><br>
+      <script type="text/javascript" src='10-step.js'></script>            
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">  
+            google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawCambodia_mort);
+      google.charts.setOnLoadCallback(drawLao_mort);
+      google.charts.setOnLoadCallback(drawThailand_mort);
+      google.charts.setOnLoadCallback(drawVietnam_mort);
+
+      google.charts.setOnLoadCallback(drawCambodia_nourish);
+      google.charts.setOnLoadCallback(drawLao_nourish);
+      google.charts.setOnLoadCallback(drawThailand_nourish);
+      google.charts.setOnLoadCallback(drawVietnam_nourish);
+
+      google.charts.setOnLoadCallback(drawCambodia_exp);
+      google.charts.setOnLoadCallback(drawLao_exp);
+      google.charts.setOnLoadCallback(drawThailand_exp);
+      google.charts.setOnLoadCallback(drawVietnam_exp);
+      </script>
+      
+      
+<h1>Three Health Indicators, Four Countries</h1>
+
+
+    <table align="center" class="columns">
+      <tr>
+		<td></td>
+        <td><h2>Cambodia</h2></td>
+        <td><h2>Lao</h2></td>
+        <td><h2>Thailand</h2></td>
+        <td><h2>Viet Nam</h2></td>
+      </tr>
+      <tr>
+		<td><p>Infant Mortality rate per 1,000 <br>births (y) vs. Year (x)</p></td>
+        <td><div id="cambodia_mortality" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="lao_mortality" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="thai_mortality" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="vietnam_mortality" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+      </tr>
+      <tr>
+		<td><p>Prevalence of Undernourishment <br>(% of population) (y) vs. Year (x)</p></td>
+        <td><div id="cambodia_nourish" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="lao_nourish" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="thai_nourish" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="vietnam_nourish" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+      </tr>
+      <tr>
+		<td><p>Health Expenditure per Capita <br>(current USD) (y) vs. Year (x)</p></td>
+        <td><div id="cambodia_exp" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="lao_exp" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="thai_exp" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+        <td><div id="vietnam_exp" style="border: 1px solid #ccc; height: 200px; width: 200px; margin: 0 auto"></div></td>
+      </tr>
+    </table>
+	<br>
+		<p>Source: <a href="http://data.worldbank.org/indicator">World Bank Databank</a></p>      
+      
+      
+<!--WGI indicators      -->
+	<h1><center>Governance Indicators</center></h1>
+
+	<p>The World Bank publishes Worldwide Governance Indicators (WGI) to measure and compare the effectiveness of government institutions. Measures are
+on a scale of -2.5 to 2.5, but have been shifted to 0 to 5 for this visualization. These cover the period 1996 to 2014.<br>
+	<br>
+        
+    <table align="center" class="columns">
+      <tr>
+        <td><div id="cambodia" style="border: 1px solid #ccc"></div></td>
+        <td><div id="lao" style="border: 1px solid #ccc"></div></td>
+      </tr>
+      <tr>
+        <td><div id="thailand" style="border: 1px solid #ccc"></div></td>
+        <td><div id="vietnam" style="border: 1px solid #ccc"></div></td>
+      </tr>	  
+    </table>
+	
+<!--  <script src="http://code.highcharts.com/highcharts.js"></script>-->
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<!--      <script type="text/javascript" src='11-WGI.js'></script>    -->              
+      
+  <script type="text/javascript">
+
+
+$(function () {
+
+    $('#cambodia').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line',
+			backgroundColor: '#FFF9E9',
+			borderWidth: 2,
+			width: 600
+        },
+
+        title: {
+            text: 'Cambodia',
+            x: -200
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Voice and Accountability', 'Political Stability and Absence of Violence', 'Government Effectiveness', 'Regulatory Quality',
+                    'Rule of Law', 'Control of Corruption'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+			max: 5
+        },
+
+        tooltip: {
+            shared: true
+
+        },
+
+		legend: {
+			enabled: false
+		},
+		
+        credits: {
+            enabled: false
+        },	
+
+        series: [{
+            name: 'Indicators',
+            data: [1.42, 2.46, 1.82, 2.1, 1.57, 1.42],
+            pointPlacement: 'on'
+        }]
+
+    });
+});
+
+
+$(function () {
+
+    $('#lao').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line',
+			backgroundColor: '#FFF9E9',
+			borderWidth: 2
+        },
+
+        title: {
+            text: 'Lao',
+            x: -200
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Voice and Accountability', 'Political Stability and Absence of Violence', 'Government Effectiveness', 'Regulatory Quality',
+                    'Rule of Law', 'Control of Corruption'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+			max: 5
+        },
+
+        tooltip: {
+            shared: true
+
+        },
+
+		legend: {
+			enabled: false
+		},
+		
+        credits: {
+            enabled: false
+        },	
+
+        series: [{
+            name: 'Indicators',
+            data: [.85, 2.96, 2.11, 1.65, 1.79, 1.74],
+            pointPlacement: 'on'
+        }]
+
+    });
+});
+
+$(function () {
+
+    $('#thailand').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line',
+			backgroundColor: '#FFF9E9',
+			borderWidth: 2
+        },
+
+        title: {
+            text: 'Thailand',
+            x: -200
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Voice and Accountability', 'Political Stability and Absence of Violence', 'Government Effectiveness', 'Regulatory Quality',
+                    'Rule of Law', 'Control of Corruption'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+			max: 5
+        },
+
+        tooltip: {
+            shared: true
+
+        },
+
+		legend: {
+			enabled: false
+		},
+		
+        credits: {
+            enabled: false
+        },	
+
+        series: [{
+            name: 'Indicators',
+            data: [1.65, 1.59, 2.84, 2.77, 2.35, 2.09],
+            pointPlacement: 'on'
+        }]
+
+    });
+});
+
+$(function () {
+
+    $('#vietnam').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line',
+			backgroundColor: '#FFF9E9',
+			borderWidth: 2
+        },
+
+        title: {
+            text: 'Viet Nam',
+            x: -200
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Voice and Accountability', 'Political Stability and Absence of Violence', 'Government Effectiveness', 'Regulatory Quality',
+                    'Rule of Law', 'Control of Corruption'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0,
+			max: 5
+        },
+
+        tooltip: {
+            shared: true
+
+        },
+
+		legend: {
+			enabled: false
+		},
+		
+        credits: {
+            enabled: false
+        },	
+
+        series: [{
+            name: 'Indicators',
+            data: [1.16, 2.5, 2.44, 1.91, 2.19, 2],
+            pointPlacement: 'on'
+        }]
+
+    });
+});
+
+  </script>      
+      
+      
+      
+	<p>Source: <a href="http://info.worldbank.org/governance/wgi/index.aspx#doc-cross">World Bank</a></p>      
+      
+<!--tableau GDP pie charts      -->
+<div class='tableauPlaceholder' id='viz1471798442470' style='position: relative'><noscript>
+    <a href='#'><img alt='GDP Size and Sector Proportions ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;11&#47;11_GDP_sector&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript>
+    
+    <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='11_GDP_sector&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;11&#47;11_GDP_sector&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object>
+      
+      </div>                
+      
+      <script type='text/javascript'>                    var divElement = document.getElementById('viz1471798442470');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>      
+      
+      <br><br>
+<!--tableau GDP and education bubble chart      -->
+<div class='tableauPlaceholder' id='viz1471798704528' style='position: relative'><noscript><a href='#'><img alt='GDP per Capita (USD) vs. High School Enrollment, percent of population ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;12&#47;12_GDP_education&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='12_GDP_education&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;12&#47;12_GDP_education&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1471798704528');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      
+      
+      <br><br>
+<!--tableau immigration treemap-->
+      
+      <div class='tableauPlaceholder' id='viz1471799193959' style='position: relative'><noscript><a href='#'><img alt='Immigrant Populations Showing Origin Country, Grouped by Destination Country ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;13&#47;13_migration&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='13_migration&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;13&#47;13_migration&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1471799193959');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      
+      <br><br>  
+<!--histogram and heatmap      -->
+      
+      <div class='tableauPlaceholder' id='viz1471800549572' style='position: relative'><noscript><a href='#'><img alt='Job Types, Education, and Wealth in Indonesia ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;14&#47;14a_jobs_education&#47;Dashboard4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='14a_jobs_education&#47;Dashboard4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;14&#47;14a_jobs_education&#47;Dashboard4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1471800549572');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      
+      
+      
+  </div>    
+</div>
+    
+
+
+
+
+    
+    
+</body>
+</html>    

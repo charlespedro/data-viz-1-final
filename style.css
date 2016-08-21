@@ -1,0 +1,44 @@
+
+body {
+    background-color: #F4E3C1;
+/*    background-color: #525659;*/
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 16px;	
+    color: #9C4206;
+}     
+
+p {
+    text-align: left;
+    margin: 25px;
+    font-size: 16px;
+    font-family: Lucida Sans Unicode;
+}
+
+a:link, a:visited {
+    color: #ffb1b9;          
+}
+
+.section {
+  padding: 1em 0;
+}
+
+.header {
+  background: linear-gradient(to bottom, #302e39 0%, #5f5b71 100%); 
+  color: #ff944d;
+  padding: 1em 0 2em;
+}
+
+div#pdf {
+    width: 100%;
+    display: block;
+/*    margin: auto;*/
+    text-align: center;
+/*    border: solid #557085;*/
+/*    border-width: 2px 4px 2px 4px;    */
+    vertical-align: middle;
+    
+}
+
+	table {
+		table-layout: auto;
+	}
