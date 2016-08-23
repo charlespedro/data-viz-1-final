@@ -7,6 +7,13 @@ body {
     color: #9C4206;
 }     
 
+h1 {
+    text-align: left;
+    margin: 25px;
+/*    font-size: 16px;*/
+    font-family: Lucida Sans Unicode;
+}
+
 p {
     text-align: left;
     margin: 25px;
@@ -29,8 +36,8 @@ a:link, a:visited {
 }
 
 div#pdf {
-    width: 100%;
-    display: block;
+/*    width: 100%;*/
+/*    display: block;*/
 /*    margin: auto;*/
     text-align: center;
 /*    border: solid #557085;*/
